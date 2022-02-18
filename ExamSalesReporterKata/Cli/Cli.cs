@@ -1,10 +1,5 @@
 ﻿namespace exam_sales_reporter_kata.Cli
 {
-	public static class Program
-    {
-    	//lots of comments!
-    	public static void Main(string[] args)
-    	{
     		//add a title to our app  
     		Console.WriteLine("=== Sales Viewer ===");
     		//extract the command name from the args  
@@ -33,6 +28,7 @@
     				 columnInfos.Select(x=>x.name).Select(
     					 (val,ind) => val.PadLeft(16)));
     			 Console.WriteLine("+" + new String('-', headerString.Length + 2) + "+");
+                 
     			 Console.WriteLine("| " + headerString + " |");
     			 Console.WriteLine("+" + new String('-', headerString.Length +2 ) + "+");
     

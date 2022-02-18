@@ -13,7 +13,7 @@ public class Tests
         using var writer = new StringWriter();
         Console.SetOut(writer);
         Console.SetError(writer);
-        Program.Main(new string[]{"print","./../../../Data/data.csv"});
+        Cli.Program.Main(new string[]{"print","./../../../Data/data.csv"});
         var sut = writer.ToString();
         Check.That(sut).IsEqualTo(
             @$"=== Sales Viewer ===
@@ -36,7 +36,7 @@ public class Tests
         using var writer = new StringWriter();
         Console.SetOut(writer);
         Console.SetError(writer);
-        Program.Main(new string[]{"report","./../../../Data/data.csv"});
+        Cli.Program.Main(new string[]{"report","./../../../Data/data.csv"});
         var sut = writer.ToString();
         Check.That(sut).IsEqualTo(
             @$"=== Sales Viewer ===
