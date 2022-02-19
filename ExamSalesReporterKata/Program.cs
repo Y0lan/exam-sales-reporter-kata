@@ -18,7 +18,6 @@ public class Program
 
     static void Start()
     {
-        //TODO probablement à réfléchir encore !
         WriteLine("=== Sales Viewer ===");
         // Add more little things needed at the start of the program here
     }
