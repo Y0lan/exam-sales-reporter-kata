@@ -17,4 +17,17 @@
       <PackageReference Include="xunit" Version="2.4.2-pre.12" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="Cli\Cli.cs" />
+      <Compile Remove="Tests\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Tests\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Tests\**" />
+    </ItemGroup>
+
 </Project>
