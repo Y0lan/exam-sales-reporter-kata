@@ -1,6 +1,5 @@
-using System.ComponentModel;
 using System.Globalization;
-using System.Text.RegularExpressions;
+using ConsoleTables;
 using CsvHelper.Configuration;
 
 namespace exam_sales_reporter_kata.CsvParser;
@@ -24,7 +23,7 @@ public class CsvUtils
                         return "userName";
                     case "NumberOfItems":
                         return "numberOfItems";
-                    case "Price": 
+                    case "Total": 
                         return "totalOfBasket";
                     case  "DateOfBuy":
                         return "dateOfBuy";
@@ -49,15 +48,22 @@ public class CsvUtils
 
     public static void DisplayCsvRawData(Csv sales)
     {
-        // HEADER
-        foreach (var head in sales.Header)
-        {
-        }
-        // BODY
+        var table = new ConsoleTable(sales.Header);
         foreach (var sale in sales.Data)
         {
-           Console.WriteLine(sale.Price); 
+            table.AddRow(
+                sale.OrderId.ToString(), 
+                sale.UserName, 
+                sale.NumberOfItems.ToString(),
+                sale.Total.ToString(CultureInfo.InvariantCulture),
+                sale.DateOfBuy.ToString("yyyy-MM-dd")
+            );
         }
+
+        table.Configure(o => o.NumberAlignment = Alignment.Right);
+        table.Write(Format.Alternative);
+        Console.WriteLine();
+
     }
 
     public static void DisplayCsvReport(IEnumerable<SaleReportData> sales)
@@ -68,18 +74,13 @@ public class CsvUtils
             Console.Write(sale.NumberOfItems);
         }
     }
-
-    static void PrettyPrintCsvHeader()
-    {
-        // TODO get header type and print it pretty
-    }
 }
 
 public class SaleReportData
 {
     public int OrderId { get; set; }
-    public string UserName { get; set; }
+    public string UserName { get; set; } = String.Empty;
     public int NumberOfItems { get; set; }
-    public decimal Price { get; set; }
+    public decimal Total { get; set; }
     public DateOnly DateOfBuy { get; set; }
 }
