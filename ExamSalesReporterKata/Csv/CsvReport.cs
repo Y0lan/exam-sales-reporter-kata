@@ -3,8 +3,7 @@ using exam_sales_reporter_kata.Structure;
 
 namespace exam_sales_reporter_kata.CsvParser;
 
-//TODO iterate on csv.Data only ONCE and send back result
-public class CsvReport //TODO rename
+public class CsvReport
 {
     private Csv csv;
     public int numberOfSales;
