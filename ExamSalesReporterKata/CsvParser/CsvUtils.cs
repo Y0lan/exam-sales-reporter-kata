@@ -14,7 +14,7 @@ public class CsvUtils
         {
             PrepareHeaderForMatch = args =>
             {
-                // TODO: reorganiser ça
+                // TODO: reorganiser ça ailleurs
                 switch (args.Header)
                 {
                     case "OrderId":
@@ -46,7 +46,7 @@ public class CsvUtils
         
     }
 
-    public static void DisplayCsvRawData(Csv sales)
+    public static void DisplayCsvRawData(Csv sales) //TODO sortir ça d'ici
     {
         var table = new ConsoleTable(sales.Header);
         foreach (var sale in sales.Data)
@@ -60,13 +60,13 @@ public class CsvUtils
             );
         }
 
-        table.Configure(o => o.NumberAlignment = Alignment.Right);
+        Console.WriteLine();
         table.Write(Format.Alternative);
         Console.WriteLine();
 
     }
 
-    public static void DisplayCsvReport(IEnumerable<SaleReportData> sales)
+    public static void DisplayCsvReport(IEnumerable<SaleReportData> sales) //TODO sortir ça d'ici
     {
         // TODO pretty print 
         foreach (var sale in sales)
