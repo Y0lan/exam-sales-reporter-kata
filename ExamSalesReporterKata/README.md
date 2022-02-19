@@ -24,5 +24,5 @@
 
 - Une librairie pour parser les arguments en ligne de commande
 - Une librairie pour lire du CSV
-    - Nunit pour les tests car Nunit permet d'utiliser Console.Write
-    - ConsoleTables pour afficher les données dans une table sans faire de l'algorithmie esoterique
+- Nunit pour les tests car Nunit permet d'utiliser Console.Write
+- ConsoleTables pour afficher les données dans une table sans faire de l'algorithmie esoterique
