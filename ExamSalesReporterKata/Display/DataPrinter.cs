@@ -1,7 +1,5 @@
 using System.Globalization;
 using ConsoleTables;
-using CsvHelper.Configuration;
-using exam_sales_reporter_kata.Structure;
 
 namespace exam_sales_reporter_kata.CsvParser;
 
